@@ -21,14 +21,14 @@ public class Main {
      public static void main(String argv[]) {
  
       try {
-         FileController inputFile = new FileController("C:\\Users\\Admin\\Desktop\\Formulario de presentación v4.16 SD prueba 1 cerra3_datos.xml");
+         FileController inputFile = new FileController("C:\\Users\\Admin\\Desktop\\Formulario de presentación v4.17 PRUEBA cerra3_datos.xml");
          inputFile.cargar();
          DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
          DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
          Document doc = dBuilder.parse(inputFile.getArchivo());
          doc.getDocumentElement().normalize();
-//         System.out.print("Root element: ");
-//         System.out.println(doc.getDocumentElement().getNodeName());
+         System.out.print("Root element: ");
+         System.out.println(doc.getDocumentElement().getNodeName());
          NodeList nList = doc.getElementsByTagName("P1P1");
          System.out.println("----------------------------");
          

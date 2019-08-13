@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-ago-2019 9:35:55 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Emisiongaseosa" table="emisiongaseosa" catalog="mma_data_sf_bd" optimistic-lock="version">
+        <id name="idEmisionGaseosa" type="java.lang.Integer">
+            <column name="idEmisionGaseosa" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="planta" class="Modelo.Planta" fetch="select">
+            <column name="idPlanta" not-null="true" />
+        </many-to-one>
+        <property name="tipo" type="string">
+            <column name="tipo" length="60" not-null="true" />
+        </property>
+        <property name="emision" type="string">
+            <column name="emision" length="50" not-null="true" />
+        </property>
+        <property name="procesoGenerador" type="string">
+            <column name="procesoGenerador" length="100" not-null="true" />
+        </property>
+        <property name="tratamiento" type="string">
+            <column name="tratamiento" length="100" not-null="true" />
+        </property>
+        <property name="componentesRelevantes" type="string">
+            <column name="componentesRelevantes" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

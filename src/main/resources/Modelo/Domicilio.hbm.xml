@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-ago-2019 9:35:55 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Domicilio" table="domicilio" catalog="mma_data_sf_bd" optimistic-lock="version">
+        <composite-id name="id" class="Modelo.DomicilioId">
+            <key-property name="tipo" type="string">
+                <column name="tipo" length="20" />
+            </key-property>
+            <key-property name="calle" type="string">
+                <column name="calle" length="50" />
+            </key-property>
+            <key-property name="numero" type="string">
+                <column name="numero" length="6" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="empresa" class="Modelo.Empresa" fetch="select">
+            <column name="cuit" not-null="true" />
+        </many-to-one>
+        <many-to-one name="planta" class="Modelo.Planta" fetch="select">
+            <column name="idPlanta" />
+        </many-to-one>
+        <property name="piso" type="java.lang.Integer">
+            <column name="piso" />
+        </property>
+        <property name="depto" type="string">
+            <column name="depto" length="6" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="localidad" length="50" not-null="true" />
+        </property>
+        <property name="cp" type="string">
+            <column name="cp" length="8" not-null="true" />
+        </property>
+        <property name="telefono" type="int">
+            <column name="telefono" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50" not-null="true" />
+        </property>
+        <property name="zonificacion" type="string">
+            <column name="zonificacion" length="50" not-null="true" />
+        </property>
+        <property name="nroPartida" type="java.lang.Integer">
+            <column name="nroPartida" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-ago-2019 9:35:55 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Empresa" table="empresa" catalog="mma_data_sf_bd" optimistic-lock="version">
+        <id name="cuit" type="int">
+            <column name="cuit" />
+            <generator class="assigned" />
+        </id>
+        <property name="razonSocial" type="string">
+            <column name="razonSocial" length="50" not-null="true" />
+        </property>
+        <property name="fechaInicioActividades" type="date">
+            <column name="fechaInicioActividades" length="10" not-null="true" />
+        </property>
+        <property name="tipoPersona" type="int">
+            <column name="tipoPersona" not-null="true" />
+        </property>
+        <property name="nroRegistro" type="java.lang.Integer">
+            <column name="nroRegistro" />
+        </property>
+        <set name="representantes" table="representante" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cuit" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Representante" />
+        </set>
+        <set name="domicilios" table="domicilio" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cuit" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Domicilio" />
+        </set>
+        <set name="plantas" table="planta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cuit" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Planta" />
+        </set>
+        <set name="actividadempresas" table="actividadempresa" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cuit" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Actividadempresa" />
+        </set>
+    </class>
+</hibernate-mapping>

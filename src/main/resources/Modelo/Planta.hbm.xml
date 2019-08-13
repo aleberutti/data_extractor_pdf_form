@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-ago-2019 9:35:55 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Planta" table="planta" catalog="mma_data_sf_bd" optimistic-lock="version">
+        <id name="idPlanta" type="java.lang.Integer">
+            <column name="idPlanta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empresa" class="Modelo.Empresa" fetch="select">
+            <column name="cuit" not-null="true" />
+        </many-to-one>
+        <property name="fueraProv" type="boolean">
+            <column name="fueraProv" not-null="true" />
+        </property>
+        <property name="superficieDeposito" type="java.lang.Double">
+            <column name="superficieDeposito" precision="22" scale="0" />
+        </property>
+        <property name="superficieTotalM2" type="double">
+            <column name="superficieTotalM2" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="superficieCubiertaM2" type="double">
+            <column name="superficieCubiertaM2" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="potenciaInstaladaHp" type="double">
+            <column name="potenciaInstaladaHP" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="dotacionDePersonal" type="int">
+            <column name="dotacionDePersonal" not-null="true" />
+        </property>
+        <property name="fechaInicioActividades" type="date">
+            <column name="fechaInicioActividades" length="10" not-null="true" />
+        </property>
+        <set name="efluentes" table="efluente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPlanta" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Efluente" />
+        </set>
+        <set name="insumos" table="insumo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPlanta" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Insumo" />
+        </set>
+        <set name="residuossolidoses" table="residuossolidos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPlanta" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Residuossolidos" />
+        </set>
+        <set name="formaciondepersonals" table="formaciondepersonal" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPlanta" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Formaciondepersonal" />
+        </set>
+        <set name="subproductos" table="subproducto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPlanta" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Subproducto" />
+        </set>
+        <set name="emisiongaseosas" table="emisiongaseosa" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPlanta" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Emisiongaseosa" />
+        </set>
+        <set name="productos" table="producto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPlanta" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Producto" />
+        </set>
+        <set name="domicilios" table="domicilio" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPlanta" />
+            </key>
+            <one-to-many class="Modelo.Domicilio" />
+        </set>
+        <set name="materiaprimas" table="materiaprima" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPlanta" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Materiaprima" />
+        </set>
+        <set name="riesgopresuntos" table="riesgopresunto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPlanta" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Riesgopresunto" />
+        </set>
+    </class>
+</hibernate-mapping>

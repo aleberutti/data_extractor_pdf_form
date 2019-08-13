@@ -8,11 +8,11 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `mma_data_sf_bd`
---
 
-----------------------------------------------------------
+-- Database: `mma_data_sf_bd`
+-- jdbc:mysql://localhost:3306/mma_data_sf_bd
+
+
 
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `Empresa`;

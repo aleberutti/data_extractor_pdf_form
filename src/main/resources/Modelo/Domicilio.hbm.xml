@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 13-ago-2019 9:35:55 by Hibernate Tools 4.3.1 -->
+<!-- Generated 16-ago-2019 12:36:13 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Domicilio" table="domicilio" catalog="mma_data_sf_bd" optimistic-lock="version">
         <composite-id name="id" class="Modelo.DomicilioId">
@@ -18,6 +18,9 @@
         <many-to-one name="empresa" class="Modelo.Empresa" fetch="select">
             <column name="cuit" not-null="true" />
         </many-to-one>
+        <many-to-one name="localidades" class="Modelo.Localidades" fetch="select">
+            <column name="localidad" not-null="true" />
+        </many-to-one>
         <many-to-one name="planta" class="Modelo.Planta" fetch="select">
             <column name="idPlanta" />
         </many-to-one>
@@ -26,12 +29,6 @@
         </property>
         <property name="depto" type="string">
             <column name="depto" length="6" />
-        </property>
-        <property name="localidad" type="string">
-            <column name="localidad" length="50" not-null="true" />
-        </property>
-        <property name="cp" type="string">
-            <column name="cp" length="8" not-null="true" />
         </property>
         <property name="telefono" type="int">
             <column name="telefono" not-null="true" />
@@ -42,8 +39,8 @@
         <property name="zonificacion" type="string">
             <column name="zonificacion" length="50" not-null="true" />
         </property>
-        <property name="nroPartida" type="java.lang.Integer">
-            <column name="nroPartida" />
+        <property name="nroPartida" type="string">
+            <column name="nroPartida" length="50" />
         </property>
     </class>
 </hibernate-mapping>

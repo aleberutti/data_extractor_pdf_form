@@ -40,19 +40,19 @@ public class FormController {
     }
     
     //Método que realiza un call del método recursivo y devuelve el valor modificado
-    public String getDataForm(String xpath){
+    public String getSimpleDataForm(String xpath){
         doc.getDocumentElement().normalize();
         
         StringBuilder value= new StringBuilder();     
         
         //Call al método recursivo con la raíz del xml tree y el camino a seguir hacia el nodo deseado
-        this.NodeSearcher(doc.getDocumentElement(), xpath, value);
+        this.SimpleNodeSearcher(doc.getDocumentElement(), xpath, value);
         
         return value.toString();
     }
     
     //Método recursivo para la obtención de un dato mediante su camino al nodo en el archivo xml
-    public void NodeSearcher(Node nNode, String xpath, StringBuilder value){
+    public void SimpleNodeSearcher(Node nNode, String xpath, StringBuilder value){
         StringTokenizer st= new StringTokenizer(xpath, ".");
         
         while(st.hasMoreTokens()){
@@ -71,7 +71,7 @@ public class FormController {
                 String nodeName= st.nextToken();
                 if(nNode.getNodeType() == Node.ELEMENT_NODE){
                     Element e = (Element) nNode;
-                    NodeSearcher(e.getElementsByTagName(nodeName).item(0),st.nextToken("\n"), value);
+                    SimpleNodeSearcher(e.getElementsByTagName(nodeName).item(0),st.nextToken("\n"), value);
                 }
             }
         }

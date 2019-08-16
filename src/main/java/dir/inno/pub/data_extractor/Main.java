@@ -22,7 +22,7 @@ public class Main {
  
       try {
             FormController formcontroller = new FormController("C:\\Users\\Admin\\Desktop\\Formulario de presentación v4.18 prueba 1 cerra3_datos.xml");
-            System.out.println("Retorno: " + formcontroller.getDataForm("Pagina1.P1P1.RazonSocial"));
+            System.out.println("Retorno: " + formcontroller.getSimpleDataForm("Pagina1.P1P1.RazonSocial"));
            
       } catch (Exception e) {
          e.printStackTrace();

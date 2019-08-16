@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 13-ago-2019 9:35:52 by Hibernate Tools 4.3.1
+// Generated 16-ago-2019 12:36:09 by Hibernate Tools 4.3.1
 
 
 
@@ -11,37 +11,34 @@ public class Domicilio  implements java.io.Serializable {
 
      private DomicilioId id;
      private Empresa empresa;
+     private Localidades localidades;
      private Planta planta;
      private Integer piso;
      private String depto;
-     private String localidad;
-     private String cp;
      private int telefono;
      private String email;
      private String zonificacion;
-     private Integer nroPartida;
+     private String nroPartida;
 
     public Domicilio() {
     }
 
 	
-    public Domicilio(DomicilioId id, Empresa empresa, String localidad, String cp, int telefono, String email, String zonificacion) {
+    public Domicilio(DomicilioId id, Empresa empresa, Localidades localidades, int telefono, String email, String zonificacion) {
         this.id = id;
         this.empresa = empresa;
-        this.localidad = localidad;
-        this.cp = cp;
+        this.localidades = localidades;
         this.telefono = telefono;
         this.email = email;
         this.zonificacion = zonificacion;
     }
-    public Domicilio(DomicilioId id, Empresa empresa, Planta planta, Integer piso, String depto, String localidad, String cp, int telefono, String email, String zonificacion, Integer nroPartida) {
+    public Domicilio(DomicilioId id, Empresa empresa, Localidades localidades, Planta planta, Integer piso, String depto, int telefono, String email, String zonificacion, String nroPartida) {
        this.id = id;
        this.empresa = empresa;
+       this.localidades = localidades;
        this.planta = planta;
        this.piso = piso;
        this.depto = depto;
-       this.localidad = localidad;
-       this.cp = cp;
        this.telefono = telefono;
        this.email = email;
        this.zonificacion = zonificacion;
@@ -61,6 +58,13 @@ public class Domicilio  implements java.io.Serializable {
     
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
+    }
+    public Localidades getLocalidades() {
+        return this.localidades;
+    }
+    
+    public void setLocalidades(Localidades localidades) {
+        this.localidades = localidades;
     }
     public Planta getPlanta() {
         return this.planta;
@@ -83,20 +87,6 @@ public class Domicilio  implements java.io.Serializable {
     public void setDepto(String depto) {
         this.depto = depto;
     }
-    public String getLocalidad() {
-        return this.localidad;
-    }
-    
-    public void setLocalidad(String localidad) {
-        this.localidad = localidad;
-    }
-    public String getCp() {
-        return this.cp;
-    }
-    
-    public void setCp(String cp) {
-        this.cp = cp;
-    }
     public int getTelefono() {
         return this.telefono;
     }
@@ -118,11 +108,11 @@ public class Domicilio  implements java.io.Serializable {
     public void setZonificacion(String zonificacion) {
         this.zonificacion = zonificacion;
     }
-    public Integer getNroPartida() {
+    public String getNroPartida() {
         return this.nroPartida;
     }
     
-    public void setNroPartida(Integer nroPartida) {
+    public void setNroPartida(String nroPartida) {
         this.nroPartida = nroPartida;
     }
 

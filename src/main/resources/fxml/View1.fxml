@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="dataExtractorUI.View1Controller">
+    <stylesheets>
+        <URL value="@/styles/view1.css" />
+    </stylesheets>
+   <children>
+      <VBox prefHeight="768.0" prefWidth="356.0" style="-fx-background-color: #2d2d2d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="358.0" fitWidth="710.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../ST/Img/Santa%20Fe%20Grey.png" />
+               </image>
+            </ImageView>
+            <Button mnemonicParsing="false" prefHeight="67.0" prefWidth="359.0" text="Button">
+               <graphic>
+                  <ImageView fitHeight="63.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

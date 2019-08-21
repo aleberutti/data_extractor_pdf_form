@@ -6,6 +6,7 @@
 package dir.inno.pub.data_extractor;
 
 import Controladores.*;
+import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import org.w3c.dom.Document;
@@ -21,8 +22,19 @@ public class Main {
      public static void main(String argv[]) {
  
       try {
-            FormController formcontroller = new FormController("C:\\Users\\Admin\\Desktop\\Formulario de presentación v4.18 prueba 1 cerra3_datos.xml");
-            System.out.println("Retorno: " + formcontroller.getSimpleDataForm("Pagina1.P1P1.RazonSocial"));
+            FormController formController = FormController.getInstance();
+            formController.setPath("C:\\Users\\Admin\\Desktop\\Formulario de presentación v4.18 prueba 1 cerra3_datos.xml");
+            formController.loadXML();
+            MultipleDataController multipleDataController = new MultipleDataController();
+//            ArrayList <Node> nodes = formcontroller.getComplexDataForm("Pagina1.P1P2.P1P2SP2.P1P2SP2.Actividad");
+//            for (Node n: nodes){
+//                System.out.println(n.getNodeName());
+//            }
+            ArrayList<ArrayList<String>> data = multipleDataController.getPartidaData();
+            for(ArrayList<String> s: data){
+                System.out.println(s);
+            }
+            //System.out.println("Retorno: " + formcontroller.getSimpleDataForm("Pagina1.P1P1.RazonSocial"));
            
       } catch (Exception e) {
          e.printStackTrace();

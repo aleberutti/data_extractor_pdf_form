@@ -18,7 +18,10 @@
    <children>
       <VBox id="VBox1" layoutX="-7.0" layoutY="-6.0" prefHeight="654.0" prefWidth="357.0" style="-fx-background-color: #4a4a49;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="674.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView id="ImgSantaFe" fitHeight="249.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="ImgSantaFe" fitHeight="320.0" fitWidth="417.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Imgs%20e%20iconos/Capa_2.png" />
+               </image></ImageView>
             <Button id="ButtonCargar" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="72.0" prefWidth="361.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Cargar" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
                <graphic>
                   <ImageView id="ImgButtonCargar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">

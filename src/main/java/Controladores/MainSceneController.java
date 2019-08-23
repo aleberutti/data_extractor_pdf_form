@@ -29,41 +29,45 @@ import javafx.scene.layout.VBox;
 public class MainSceneController implements Initializable {
     
     @FXML
-    private AnchorPane RootAnchorPane;
+    private AnchorPane rootAnchorPane;
     @FXML
-    private VBox VBox1;
+    private VBox vBox1;
     @FXML
-    private ImageView ImgSantaFe;
+    private ImageView imgSantaFe;
     @FXML
-    private Button ButtonCargar;
+    private Button buttonCargar;
     @FXML
-    private ImageView ImgButtonCargar;
+    private ImageView imgButtonCargar;
     @FXML
-    private Button ButtonEliminar;
+    private Button buttonEliminar;
     @FXML
-    private ImageView ImgButtonEliminar;
+    private ImageView imgButtonEliminar;
     @FXML
-    private Button ButtonProcesarLista;
+    private Button buttonProcesarLista;
     @FXML
-    private ImageView ImgButtonProcesarLista;
+    private ImageView imgButtonProcesarLista;
     @FXML
-    private Button ButtonCerrarSesion;
+    private Button buttonCerrarSesion;
     @FXML
-    private ImageView ImgButtonCerrarSesion;
+    private ImageView imgButtonCerrarSesion;
     @FXML
-    private VBox VBox2;
+    private VBox vBox2;
     @FXML
-    private AnchorPane AnchorPane1Archivos;
+    private Label labelExtraccionDatos;
     @FXML
-    private Label LabelExtraccionDatos;
+    private Label labelArchivos;
     @FXML
-    private Label LabelArchivos;
+    private ScrollPane scrollPaneArchivos;
     @FXML
-    private ScrollPane ScrollPaneArchivos;
+    private AnchorPane anchorPaneArchivos;
     @FXML
-    private AnchorPane AnchorPane2Archivos;
+    private ListView listViewArchivos;
+    
     @FXML
-    private ListView ListViewArchivos;
+    private URL url;
+     
+    @FXML
+    private ResourceBundle rb;
     
     
 
@@ -72,7 +76,18 @@ public class MainSceneController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
+    }
+    
+    
+    
+    public void cargarListView(){
+        listViewArchivos = new ListView();
+        listViewArchivos.getItems().add("Archivo pdf 1.pdf");
+        listViewArchivos.getItems().add("Archivo pdf 2.pdf");
+        listViewArchivos.getItems().add("Archivo pdf 3.pdf"); 
+        
+        vBox2 = new VBox(listViewArchivos);
+        rootAnchorPane = new AnchorPane(vBox2);
     }
 
 }

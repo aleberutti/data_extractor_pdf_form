@@ -11,47 +11,47 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="RootAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="1024.0" style="-fx-background-color: #000000;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.MainSceneController">
+<AnchorPane id="rootAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="1024.0" style="-fx-background-color: #000000;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.MainSceneController">
     <stylesheets>
-        <URL value="@/styles/view1.css" />
+        <URL value="@/styles/MainScene.css" />
     </stylesheets>
    <children>
-      <VBox id="VBox1" layoutX="-7.0" layoutY="-6.0" prefHeight="654.0" prefWidth="357.0" style="-fx-background-color: #4a4a49;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="674.0" AnchorPane.topAnchor="0.0">
+      <VBox id="vBox1" layoutX="-7.0" layoutY="-6.0" prefHeight="654.0" prefWidth="357.0" style="-fx-background-color: #4a4a49;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="674.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView id="ImgSantaFe" fitHeight="320.0" fitWidth="417.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="imgSantaFe" fitHeight="320.0" fitWidth="417.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Imgs%20e%20iconos/Capa_2.png" />
                </image></ImageView>
-            <Button id="ButtonCargar" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="72.0" prefWidth="361.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Cargar" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
+            <Button id="buttonCargar" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="72.0" prefWidth="361.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Cargar" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
                <graphic>
-                  <ImageView id="ImgButtonCargar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="imgButtonCargar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Images/outline_create_new_folder_black_18dp.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="ButtonEliminar" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="72.0" prefWidth="364.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Eliminar" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
+            <Button id="buttonEliminar" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="72.0" prefWidth="364.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Eliminar" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
                <graphic>
-                  <ImageView id="ImgButtonEliminar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="imgButtonEliminar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Images/outline_delete_forever_black_18dp.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="ButtonProcesarLista" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="72.0" prefWidth="374.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Procesar lista" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
+            <Button id="buttonProcesarLista" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="72.0" prefWidth="374.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Procesar lista" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
                <graphic>
-                  <ImageView id="ImgButtonProcesarLista" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="imgButtonProcesarLista" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Images/outline_done_outline_black_18dp.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="ButtonCerrarSesion" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="72.0" prefWidth="402.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Cerrar sesión" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
+            <Button id="buttonCerrarSesion" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="72.0" prefWidth="402.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Cerrar sesión" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
                <graphic>
-                  <ImageView id="ImgButtonCerrarSesion" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="imgButtonCerrarSesion" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Images/outline_exit_to_app_black_18dp.png" />
                      </image>
@@ -60,43 +60,35 @@
             </Button>
          </children>
       </VBox>
-      <VBox id="VBox2" layoutX="350.0" layoutY="145.0" prefHeight="503.0" prefWidth="674.0" style="-fx-background-color: #191919;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="145.0">
+      <VBox id="vBox2" layoutX="350.0" layoutY="150.0" prefHeight="498.0" prefWidth="674.0" style="-fx-background-color: #333333; visibility: true; -fx-border-color: #B3B3B3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
          <children>
-            <ScrollPane id="ScrollPaneArchivos" prefHeight="503.0" prefWidth="673.0" style="-fx-background-color: #191919;">
-              <content>
-                <AnchorPane id="AnchorPaneArchivos" minHeight="0.0" minWidth="0.0" prefHeight="535.0" prefWidth="706.0" style="-fx-background-color: #191919;">
-                     <children>
-                        <ListView id="ListViewArchivos" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #191919;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                     </children>
-                  </AnchorPane>
-              </content>
-            </ScrollPane>
+            <ListView id="listViewArchivos" prefHeight="507.0" prefWidth="672.0" style="-fx-background-color: #333333; visibility: true; -fx-border-color: #B3B3B3;" />
          </children>
       </VBox>
-      <Button id="BtnCerrar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="973.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: 202020;" textAlignment="CENTER" AnchorPane.bottomAnchor="605.0" AnchorPane.leftAnchor="973.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <Button id="btnCerrar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="973.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: 202020;" textAlignment="CENTER" AnchorPane.bottomAnchor="605.0" AnchorPane.leftAnchor="973.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
          <graphic>
-            <ImageView id="ImgBtnCerrar" fitHeight="21.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="imgBtnCerrar" fitHeight="21.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Imgs%20e%20iconos/cerrar.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button id="BtnMinimizar" contentDisplay="BOTTOM" layoutX="927.0" layoutY="17.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="46.0" style="-fx-background-color: 202020;">
+      <Button id="btnMinimizar" contentDisplay="BOTTOM" layoutX="927.0" layoutY="17.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="46.0" style="-fx-background-color: 202020;">
          <graphic>
-            <ImageView id="ImgBtnMinimizar" fitHeight="5.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="imgBtnMinimizar" fitHeight="5.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Imgs%20e%20iconos/minimize.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Label id="LabelExtraccion" alignment="CENTER" layoutX="359.0" layoutY="50.0" prefHeight="17.0" prefWidth="656.0" text="Extracción de datos de formularios" textFill="#bbbbbb" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0">
+      <Label id="labelExtraccion" alignment="CENTER" layoutX="359.0" layoutY="50.0" prefHeight="17.0" prefWidth="656.0" text="Extracción de datos de formularios" textFill="#bbbbbb" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Label id="LabelArchivos" alignment="BOTTOM_LEFT" layoutX="359.0" layoutY="95.0" prefHeight="55.0" prefWidth="180.0" text="Archivos a procesar" textFill="#bbbbbb" AnchorPane.bottomAnchor="498.0" AnchorPane.leftAnchor="359.0" AnchorPane.rightAnchor="485.0" AnchorPane.topAnchor="95.0">
+      <Label id="labelArchivos" alignment="BOTTOM_LEFT" layoutX="359.0" layoutY="95.0" prefHeight="55.0" prefWidth="180.0" text="Archivos a procesar" textFill="#bbbbbb" AnchorPane.bottomAnchor="498.0" AnchorPane.leftAnchor="359.0" AnchorPane.rightAnchor="485.0" AnchorPane.topAnchor="95.0">
          <font>
             <Font size="20.0" />
          </font>

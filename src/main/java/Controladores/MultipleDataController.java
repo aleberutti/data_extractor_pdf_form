@@ -18,16 +18,29 @@ import org.jdom2.input.SAXBuilder;
  * @author Admin
  */
 //Clase para gestionar los datos dinámicos del formulario
-
+//Singleton Class // Solo se creará una sola instancia
 public class MultipleDataController {
     //Attributes
     public ArrayList<Element> nodes = new ArrayList<>();
     public FormController formController;
     
+    //Singleton
+    
+    private static MultipleDataController instance;
+    
     //Public constructor
     public MultipleDataController(){
         this.formController = FormController.getInstance();
     }
+    
+    //getInstance del patrón singleton
+    public static synchronized MultipleDataController getInstance(){
+    if(instance==null){
+        instance = new MultipleDataController();
+    }
+    return instance;
+    }
+    
     //Método para obtener las actividades de la empresa
     public ArrayList<ArrayList<String>> getActivitiesData(){
         this.nodes.clear();

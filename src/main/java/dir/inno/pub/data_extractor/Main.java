@@ -25,7 +25,7 @@ public class Main {
             FormController formController = FormController.getInstance();
             formController.setPath("C:\\Users\\Admin\\Desktop\\Formulario de presentación v4.18 prueba 4 cerra3_datos.xml");
             formController.loadXML();
-            MultipleDataController multipleDataController = new MultipleDataController();
+            MultipleDataController multipleDataController = MultipleDataController.getInstance();
 //            ArrayList <Node> nodes = formcontroller.getComplexDataForm("Pagina1.P1P2.P1P2SP2.P1P2SP2.Actividad");
 //            for (Node n: nodes){
 //                System.out.println(n.getNodeName());

@@ -88,7 +88,7 @@ public class FormController {
                 String textContent = element.getChild(nodeName).getText();
                 
                 if(textContent.equals("")){
-                    throw new EmptyException("Empty");
+                    throw new EmptyException("The next node is empty: " + nodeName);
                 }
                 else{
                     //Modificamos el valor pasado como parámetro

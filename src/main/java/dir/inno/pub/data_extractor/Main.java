@@ -23,14 +23,14 @@ public class Main {
  
       try {
             FormController formController = FormController.getInstance();
-            formController.setPath("C:\\Users\\Admin\\Desktop\\Formulario de presentación v4.18 prueba 3 cerra3_datos.xml");
+            formController.setPath("C:\\Users\\Admin\\Desktop\\Formulario de presentación v4.18 prueba 4 cerra3_datos.xml");
             formController.loadXML();
             MultipleDataController multipleDataController = new MultipleDataController();
 //            ArrayList <Node> nodes = formcontroller.getComplexDataForm("Pagina1.P1P2.P1P2SP2.P1P2SP2.Actividad");
 //            for (Node n: nodes){
 //                System.out.println(n.getNodeName());
 //            }
-            ArrayList<ArrayList<String>> data = multipleDataController.getAnnexPropertyData();
+            ArrayList<ArrayList<String>> data = multipleDataController.getWastePData();
             if (!data.isEmpty()){
                 for(ArrayList<String> s: data){
                 System.out.println(s);

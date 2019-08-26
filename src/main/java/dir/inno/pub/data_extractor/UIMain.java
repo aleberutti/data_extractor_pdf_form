@@ -16,6 +16,7 @@ import Controladores.*;
 import java.io.IOException;
 import java.net.URL;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 
@@ -32,30 +33,33 @@ public class UIMain extends Application {
      * https://www.callicoder.com/javafx-fxml-form-gui-tutorial/
      */
     
-    private Scene mainScreen;
-    private AnchorPane pantallaRaiz;
-    private ListView listaArchivos;
-    
-    public static void main(String[] args) {
-        launch(args);
-    }
-    
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader();
+        /*FXMLLoader loader = new FXMLLoader();
         loader.setLocation(new URL("file:///D:/Netbeans/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/MainScene.fxml"));
         //D:\Netbeans\Proyectos\data_extractor_pdf_form\src\main\resources\fxml\MainScene.fxml
-        
         MainSceneController controlador = new MainSceneController();
         controlador.cargarListView();
-        
+        window = primaryStage;
         pantallaRaiz = loader.<AnchorPane>load();
         mainScreen = new Scene(pantallaRaiz);
         primaryStage.setScene(mainScreen);
         primaryStage.setTitle("Interfaz principal");
+        primaryStage.show();*/
+
+        Parent root = FXMLLoader.load(getClass().getResource("D:\\Netbeans\\Proyectos\\data_extractor_pdf_form\\src\\main\\resources\\fxml\\MainScene.fxml"));
+        primaryStage.setScene(new Scene(root, 1024, 648));
         primaryStage.show();
         
+        
        
+    }
+
+     /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
     }
     
     

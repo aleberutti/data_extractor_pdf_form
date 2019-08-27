@@ -5,6 +5,8 @@
  */
 package Controladores;
 
+import Modelo.ArchivoXML;
+import dir.inno.pub.data_extractor.UIMain;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -27,7 +29,7 @@ import javafx.scene.layout.VBox;
  *
  * @author MODERNIZACION04
  */
-public class MainSceneController implements Initializable {
+public class UIController implements Initializable {
     
     @FXML
     private AnchorPane rootAnchorPane;
@@ -62,28 +64,35 @@ public class MainSceneController implements Initializable {
     @FXML
     private AnchorPane anchorPaneArchivos;
     @FXML
-    private ListView<String> listViewArchivos;
-    
+    private ListView<ArchivoXML> listViewArchivos;
     @FXML
     private URL url; 
     @FXML
     private ResourceBundle rb;
     
-   
-    ObservableList<String> itemsList = FXCollections.observableArrayList();
+    private UIMain ui;
+    
+    /**
+     * Constructor. Debe ser llamado antes del método initialize
+     */
+    public UIController(){
+        
+    }
+    
     /**
      * Initializes the controller class.
      */
-    @Override
+    
+    @FXML
     public void initialize(URL url, ResourceBundle rb) {
         
-        listViewArchivos.setItems(itemsList);
-        listViewArchivos.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        //listViewArchivos.setItems(itemsList);
+        //listViewArchivos.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
     
     
     
-    public void cargarListView(){
+    /*public void cargarListView(){
         
         itemsList.removeAll(itemsList); //vacio la lista
         String item1 = "Archivo pdf 1.pdf";
@@ -92,6 +101,6 @@ public class MainSceneController implements Initializable {
         itemsList.addAll(item1, item2, item3);
         
         
-    }
+    }*/
 
 }

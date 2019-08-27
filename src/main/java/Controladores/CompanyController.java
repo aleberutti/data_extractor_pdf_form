@@ -36,15 +36,22 @@ public class CompanyController {
     
     public void instantiate (){
         //Acá se obtienen todos los datos mediante formcontroller y multiplecontroller
-        try{
-           String scuit = formcontroller.getSimpleDataForm("Pagina1.P1P1.Cuit1")+
-                formcontroller.getSimpleDataForm("Pagina1.P1P1.Cuit2")+
-                formcontroller.getSimpleDataForm("Pagina1.P1P1.Cuit3");
-           Long cuit = Long.parseLong(scuit);
-           System.out.println(cuit);
-        }catch (EmptyException e){
-            //will see
-        }
+    }
+
+    public FormController getFormcontroller() {
+        return formcontroller;
+    }
+
+    public void setFormcontroller(FormController formcontroller) {
+        this.formcontroller = formcontroller;
+    }
+
+    public MultipleDataController getMultiplecontroller() {
+        return multiplecontroller;
+    }
+
+    public void setMultiplecontroller(MultipleDataController multiplecontroller) {
+        this.multiplecontroller = multiplecontroller;
     }
 
     public Empresa getCompany() {

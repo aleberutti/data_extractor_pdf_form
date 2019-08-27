@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 16-ago-2019 12:36:09 by Hibernate Tools 4.3.1
+// Generated 27-ago-2019 12:41:28 by Hibernate Tools 4.3.1
 
 
 
@@ -9,22 +9,22 @@ package Modelo;
 public class ActividadempresaId  implements java.io.Serializable {
 
 
-     private int cuit;
+     private long cuit;
      private int cuacm;
 
     public ActividadempresaId() {
     }
 
-    public ActividadempresaId(int cuit, int cuacm) {
+    public ActividadempresaId(long cuit, int cuacm) {
        this.cuit = cuit;
        this.cuacm = cuacm;
     }
    
-    public int getCuit() {
+    public long getCuit() {
         return this.cuit;
     }
     
-    public void setCuit(int cuit) {
+    public void setCuit(long cuit) {
         this.cuit = cuit;
     }
     public int getCuacm() {
@@ -49,7 +49,7 @@ public class ActividadempresaId  implements java.io.Serializable {
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + this.getCuit();
+         result = 37 * result + (int) this.getCuit();
          result = 37 * result + this.getCuacm();
          return result;
    }   

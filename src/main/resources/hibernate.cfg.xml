@@ -55,9 +55,9 @@ Contributor(s):
     <mapping resource="Modelo/Insumo.hbm.xml"/>
     <mapping resource="Modelo/Localidades.hbm.xml"/>
     <mapping resource="Modelo/Tanque.hbm.xml"/>
+    <mapping resource="Modelo/Actividadempresa.hbm.xml"/>
     <mapping resource="Modelo/Planta.hbm.xml"/>
     <mapping resource="Modelo/Subproducto.hbm.xml"/>
-    <mapping resource="Modelo/Actividadempresa.hbm.xml"/>
     <mapping resource="Modelo/Domicilio.hbm.xml"/>
     <mapping resource="Modelo/Partidainmobiliaria.hbm.xml"/>
     <mapping resource="Modelo/Riesgopresunto.hbm.xml"/>

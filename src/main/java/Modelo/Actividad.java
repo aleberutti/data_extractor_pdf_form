@@ -12,7 +12,7 @@ public class Actividad  implements java.io.Serializable {
 
 
      private int cuacm;
-     private Grupoactividad grupoactividad;
+     private GrupoActividad grupoactividad;
      private String nombreActividad;
      private int estandar;
      private Set actividadempresas = new HashSet(0);
@@ -21,13 +21,13 @@ public class Actividad  implements java.io.Serializable {
     }
 
 	
-    public Actividad(int cuacm, Grupoactividad grupoactividad, String nombreActividad, int estandar) {
+    public Actividad(int cuacm,GrupoActividad grupoactividad, String nombreActividad, int estandar) {
         this.cuacm = cuacm;
         this.grupoactividad = grupoactividad;
         this.nombreActividad = nombreActividad;
         this.estandar = estandar;
     }
-    public Actividad(int cuacm, Grupoactividad grupoactividad, String nombreActividad, int estandar, Set actividadempresas) {
+    public Actividad(int cuacm,GrupoActividad grupoactividad, String nombreActividad, int estandar, Set actividadempresas) {
        this.cuacm = cuacm;
        this.grupoactividad = grupoactividad;
        this.nombreActividad = nombreActividad;
@@ -42,11 +42,11 @@ public class Actividad  implements java.io.Serializable {
     public void setCuacm(int cuacm) {
         this.cuacm = cuacm;
     }
-    public Grupoactividad getGrupoactividad() {
+    public GrupoActividad getGrupoactividad() {
         return this.grupoactividad;
     }
     
-    public void setGrupoactividad(Grupoactividad grupoactividad) {
+    public void setGrupoActividad (GrupoActividad grupoactividad) {
         this.grupoactividad = grupoactividad;
     }
     public String getNombreActividad() {

@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 16-ago-2019 12:36:09 by Hibernate Tools 4.3.1
+// Generated 27-ago-2019 12:11:37 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,10 +12,10 @@ import java.util.Set;
 public class Empresa  implements java.io.Serializable {
 
 
-     private int cuit;
+     private long cuit;
      private String razonSocial;
      private Date fechaInicioActividades;
-     private int tipoPersona;
+     private String tipoPersona;
      private Integer nroRegistro;
      private Set representantes = new HashSet(0);
      private Set domicilios = new HashSet(0);
@@ -26,13 +26,13 @@ public class Empresa  implements java.io.Serializable {
     }
 
 	
-    public Empresa(int cuit, String razonSocial, Date fechaInicioActividades, int tipoPersona) {
+    public Empresa(long cuit, String razonSocial, Date fechaInicioActividades, String tipoPersona) {
         this.cuit = cuit;
         this.razonSocial = razonSocial;
         this.fechaInicioActividades = fechaInicioActividades;
         this.tipoPersona = tipoPersona;
     }
-    public Empresa(int cuit, String razonSocial, Date fechaInicioActividades, int tipoPersona, Integer nroRegistro, Set representantes, Set domicilios, Set plantas, Set actividadempresas) {
+    public Empresa(long cuit, String razonSocial, Date fechaInicioActividades, String tipoPersona, Integer nroRegistro, Set representantes, Set domicilios, Set plantas, Set actividadempresas) {
        this.cuit = cuit;
        this.razonSocial = razonSocial;
        this.fechaInicioActividades = fechaInicioActividades;
@@ -44,11 +44,11 @@ public class Empresa  implements java.io.Serializable {
        this.actividadempresas = actividadempresas;
     }
    
-    public int getCuit() {
+    public long getCuit() {
         return this.cuit;
     }
     
-    public void setCuit(int cuit) {
+    public void setCuit(long cuit) {
         this.cuit = cuit;
     }
     public String getRazonSocial() {
@@ -65,11 +65,11 @@ public class Empresa  implements java.io.Serializable {
     public void setFechaInicioActividades(Date fechaInicioActividades) {
         this.fechaInicioActividades = fechaInicioActividades;
     }
-    public int getTipoPersona() {
+    public String getTipoPersona() {
         return this.tipoPersona;
     }
     
-    public void setTipoPersona(int tipoPersona) {
+    public void setTipoPersona(String tipoPersona) {
         this.tipoPersona = tipoPersona;
     }
     public Integer getNroRegistro() {

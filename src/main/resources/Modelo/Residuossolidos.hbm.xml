@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 16-ago-2019 12:36:13 by Hibernate Tools 4.3.1 -->
+<!-- Generated 27-ago-2019 12:11:39 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Residuossolidos" table="residuossolidos" catalog="mma_data_sf_bd" optimistic-lock="version">
         <id name="idResiduoSolido" type="java.lang.Integer">

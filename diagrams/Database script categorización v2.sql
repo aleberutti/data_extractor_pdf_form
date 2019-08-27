@@ -43,10 +43,10 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 DROP TABLE IF EXISTS `Empresa`;
 CREATE TABLE IF NOT EXISTS `Empresa` (
-    `cuit` INTEGER NOT NULL,
+    `cuit` BIGINT NOT NULL,
     `razonSocial` VARCHAR(50) NOT NULL,
     `fechaInicioActividades` DATE NOT NULL,
-    `tipoPersona` INTEGER NOT NULL,
+    `tipoPersona` VARCHAR(50) NOT NULL,
     `nroRegistro` INTEGER,
     PRIMARY KEY (`cuit`)
 );
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `Actividad` (
 );
 DROP TABLE IF EXISTS `actividadEmpresa`;
 CREATE TABLE IF NOT EXISTS `actividadEmpresa` (
-    `cuit` INTEGER NOT NULL,
+    `cuit` BIGINT NOT NULL,
     `cuacm` INTEGER NOT NULL,
     `prioridad` VARCHAR(20) NOT NULL,
     PRIMARY KEY (`cuit`, `cuacm`)
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `GrupoActividad` (
 );
 DROP TABLE IF EXISTS `Domicilio`;
 CREATE TABLE IF NOT EXISTS `Domicilio` (
-    `cuit` INTEGER NOT NULL,
+    `cuit` BIGINT NOT NULL,
     `tipo` VARCHAR(20) NOT NULL,
     `calle` VARCHAR(50) NOT NULL,
     `numero` VARCHAR(6) NOT NULL,
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `Representante` (
     `apellido` VARCHAR(50) NOT NULL,
     `nombre` VARCHAR(50) NOT NULL,
     `cargo` VARCHAR(50) NOT NULL,
-    `cuit` INTEGER NOT NULL,
+    `cuit` BIGINT NOT NULL,
     `tipo` VARCHAR(20) NOT NULL,
     PRIMARY KEY (`documento`)
 );
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `Insumo` (
 DROP TABLE IF EXISTS `Planta`;
 CREATE TABLE IF NOT EXISTS `Planta` (
     `idPlanta` INTEGER AUTO_INCREMENT,
-    `cuit` INTEGER NOT NULL,
+    `cuit` BIGINT NOT NULL,
     `fueraProv` BOOLEAN NOT NULL,
     `superficieDeposito` DOUBLE,
     `superficieTotalM2` DOUBLE NOT NULL,

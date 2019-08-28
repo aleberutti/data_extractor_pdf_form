@@ -49,7 +49,8 @@ public class UIMain extends Application {
         this.stagePrimario = primaryStage;
         this.stagePrimario.setTitle("Título Random");
         initRootLayout();
-        showMainScene();   
+        showLogin();
+        //showMainScene();   
     }
     
     /**
@@ -59,7 +60,7 @@ public class UIMain extends Application {
         try{
             //cargo el layout raiz desde el archivo fxml
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(new URL("file:///D:/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/RootLayout.fxml"));
+            loader.setLocation(new URL("file:///D:/Netbeans/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
             
             //muestro el contenido dentro del layout raiz
@@ -73,13 +74,13 @@ public class UIMain extends Application {
     }
     
     /**
-     * inicializa mainScene
+     * inicializa y muestra mainScene
      */
     public void showMainScene(){
         try{
             //cargo el mainscene desde el archivo fxml
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(new URL("file:///D:/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/MainScene.fxml"));
+            loader.setLocation(new URL("file:///D:/Netbeans/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/MainScene.fxml"));
             AnchorPane rootAnchorPane = (AnchorPane) loader.load();
             
             //seteo el mainscene al centro del scene raiz
@@ -88,6 +89,24 @@ public class UIMain extends Application {
         catch(IOException e){
             e.printStackTrace();
         };
+    }
+    
+    /**
+     * inicializa y muestra la pantalla de login
+     */
+    public void showLogin(){
+        try{
+            //cargo el login desde el archivo fxml
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(new URL("file:///D:/Netbeans/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/Login.fxml"));
+            AnchorPane anchorPaneLoginRoot = (AnchorPane) loader.load();
+            
+            //seteo el login en el centro del scene raíz
+            rootLayout.setCenter(anchorPaneLoginRoot);
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
     }
     
     /**
@@ -109,17 +128,5 @@ public class UIMain extends Application {
     * constructor UIMain
     */
     public UIMain(){
-        //agrego datos de prueba
-        listaArchivos.add(("Archivo 1.xml"));
-        listaArchivos.add(("Archivo 2.xml"));
-        listaArchivos.add(("Archivo 3.xml"));
-    }
-    
-    /**
-     * getter para obtener la observableList de archivos
-     * @return 
-     */
-    public ObservableList<String> getListaArchivos(){
-        return listaArchivos;
     }
 }

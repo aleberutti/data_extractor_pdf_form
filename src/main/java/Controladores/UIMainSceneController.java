@@ -29,7 +29,7 @@ import javafx.scene.layout.VBox;
  *
  * @author MODERNIZACION04
  */
-public class UIController{
+public class UIMainSceneController{
     
     @FXML
     private AnchorPane rootAnchorPane;
@@ -76,7 +76,7 @@ public class UIController{
     /**
      * Constructor. Debe ser llamado antes del método initialize
      */
-    public UIController(){
+    public UIMainSceneController(){
         
     }
     
@@ -87,39 +87,25 @@ public class UIController{
     @FXML
     public void initialize() {
         
-        //listViewArchivos.setItems(itemsList);
-        //listViewArchivos.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-         ObservableList<String> listaArchivos = FXCollections.observableArrayList(); 
+        ObservableList<String> listaArchivos = FXCollections.observableArrayList(); 
 
         listaArchivos.add(("Archivo 1.xml"));
         listaArchivos.add(("Archivo 2.xml"));
         listaArchivos.add(("Archivo 3.xml"));
         
         listViewArchivos.setItems(listaArchivos);
-       
-        System.out.println(listaArchivos.toString());
+        listViewArchivos.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        //System.out.println(listaArchivos.toString());
         
     }
     
     
     @FXML
     public void buttonDelete(){
-        String asd;
-        asd=this.listViewArchivos.getSelectionModel().getSelectedItem();
-        this.listViewArchivos.getItems().remove(asd);
+        String item;
+        item = this.listViewArchivos.getSelectionModel().getSelectedItem();
+        this.listViewArchivos.getItems().remove(item);
         
     }
-    
-    
-    /*public void cargarListView(){
-        
-        itemsList.removeAll(itemsList); //vacio la lista
-        String item1 = "Archivo pdf 1.pdf";
-        String item2 = "Archivo pdf 2.pdf";
-        String item3 = "Archivo pdf 3.pdf";
-        itemsList.addAll(item1, item2, item3);
-        
-        
-    }*/
 
 }

@@ -13,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import Controladores.*;
-import Modelo.ArchivoXML;
+
 import java.io.IOException;
 import java.net.URL;
 import javafx.collections.FXCollections;
@@ -39,6 +39,7 @@ public class UIMain extends Application {
     private Stage stagePrimario;
     private BorderPane rootLayout;
     private ObservableList<String> listaArchivos = FXCollections.observableArrayList(); 
+    
     
     
     

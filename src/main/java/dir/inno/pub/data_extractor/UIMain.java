@@ -38,7 +38,7 @@ public class UIMain extends Application {
      */
     private Stage stagePrimario;
     private BorderPane rootLayout;
-    private ObservableList<ArchivoXML> listaArchivos = FXCollections.observableArrayList(); 
+    private ObservableList<String> listaArchivos = FXCollections.observableArrayList(); 
     
     
     
@@ -58,7 +58,7 @@ public class UIMain extends Application {
         try{
             //cargo el layout raiz desde el archivo fxml
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(new URL("file:///D:/Netbeans/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/RootLayout.fxml"));
+            loader.setLocation(new URL("file:///D:/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
             
             //muestro el contenido dentro del layout raiz
@@ -78,7 +78,7 @@ public class UIMain extends Application {
         try{
             //cargo el mainscene desde el archivo fxml
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(new URL("file:///D:/Netbeans/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/MainScene.fxml"));
+            loader.setLocation(new URL("file:///D:/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/MainScene.fxml"));
             AnchorPane rootAnchorPane = (AnchorPane) loader.load();
             
             //seteo el mainscene al centro del scene raiz
@@ -109,16 +109,16 @@ public class UIMain extends Application {
     */
     public UIMain(){
         //agrego datos de prueba
-        listaArchivos.add(new ArchivoXML("Archivo 1.xml"));
-        listaArchivos.add(new ArchivoXML("Archivo 2.xml"));
-        listaArchivos.add(new ArchivoXML("Archivo 3.xml"));
+        listaArchivos.add(("Archivo 1.xml"));
+        listaArchivos.add(("Archivo 2.xml"));
+        listaArchivos.add(("Archivo 3.xml"));
     }
     
     /**
      * getter para obtener la observableList de archivos
      * @return 
      */
-    public ObservableList<ArchivoXML> getListaArchivos(){
+    public ObservableList<String> getListaArchivos(){
         return listaArchivos;
     }
 }

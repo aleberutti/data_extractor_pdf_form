@@ -29,7 +29,7 @@ import javafx.scene.layout.VBox;
  *
  * @author MODERNIZACION04
  */
-public class UIController implements Initializable {
+public class UIController{
     
     @FXML
     private AnchorPane rootAnchorPane;
@@ -64,7 +64,7 @@ public class UIController implements Initializable {
     @FXML
     private AnchorPane anchorPaneArchivos;
     @FXML
-    private ListView<ArchivoXML> listViewArchivos;
+    private ListView<String> listViewArchivos;
     @FXML
     private URL url; 
     @FXML
@@ -84,12 +84,30 @@ public class UIController implements Initializable {
      */
     
     @FXML
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize() {
         
         //listViewArchivos.setItems(itemsList);
         //listViewArchivos.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+         ObservableList<String> listaArchivos = FXCollections.observableArrayList(); 
+
+        listaArchivos.add(("Archivo 1.xml"));
+        listaArchivos.add(("Archivo 2.xml"));
+        listaArchivos.add(("Archivo 3.xml"));
+        
+        listViewArchivos.setItems(listaArchivos);
+       
+        System.out.println(listaArchivos.toString());
+        
     }
     
+    
+    @FXML
+    public void buttonDelete(){
+        String asd;
+        asd=this.listViewArchivos.getSelectionModel().getSelectedItem();
+        this.listViewArchivos.getItems().remove(asd);
+        
+    }
     
     
     /*public void cargarListView(){

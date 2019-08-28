@@ -5,7 +5,7 @@
  */
 package Controladores;
 
-import Modelo.ArchivoXML;
+
 import dir.inno.pub.data_extractor.UIMain;
 import java.net.URL;
 import java.util.ArrayList;
@@ -71,6 +71,7 @@ public class UIController{
     private ResourceBundle rb;
     
     private UIMain ui;
+    private ObservableList<String> listaArchivos = FXCollections.observableArrayList(); 
     
     /**
      * Constructor. Debe ser llamado antes del método initialize

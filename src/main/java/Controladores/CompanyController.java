@@ -6,7 +6,11 @@
 package Controladores;
 
 import Modelo.*;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.sql.Date;
+
 
 /**
  *
@@ -15,27 +19,51 @@ import java.util.List;
 
 //Clase para gestionar los datos de la empresa y de la planta en general
 public class CompanyController {
+    
     public FormController formcontroller;
     public MultipleDataController multiplecontroller;
     public Empresa company;
-    public List<Actividad> activites;
-    public Planta plant;
-    public Domicilio address;
-    public PartidaInmobiliaria partida;
-    public Representante representanteLegal;
-    public List<Representante> representantes;
-    public List<Representante> autoridades;
-    public FormacionDePersonal personal;
-    public Perito perito;
+    private final CompanyDAO companyDAO;
     
     
     public CompanyController(){
         this.formcontroller = FormController.getInstance();
         this.multiplecontroller = MultipleDataController.getInstance();
+        this.companyDAO = new CompanyDAO();
     }
     
     public void instantiate (){
         //Acá se obtienen todos los datos mediante formcontroller y multiplecontroller
+        try{
+           //Instancia Empresa
+            String scuit = formcontroller.getSimpleDataForm("Pagina1.P1P1.Cuit1")
+                   + formcontroller.getSimpleDataForm("Pagina1.P1P1.Cuit2")
+                   + formcontroller.getSimpleDataForm("Pagina1.P1P1.Cuit3");
+           Long cuit = Long.parseLong(scuit);
+           String razonSocial = formcontroller.getSimpleDataForm("Pagina1.P1P1.RazonSocial");
+           String sdate = formcontroller.getSimpleDataForm("Pagina1.P1P1.InicioDeActividades");
+           DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+           LocalDate localDate = LocalDate.parse(sdate, fmt);
+           Date fechaInicioActividades = Date.valueOf(localDate);
+           String nTipo = formcontroller.getSimpleDataForm("Pagina1.P1P1.TipoPersona");
+           String tipoPersona = "";
+           switch (nTipo){
+               case "1":
+                   tipoPersona+="Persona Física";
+                   break;
+                case "2":
+                   tipoPersona+="Sociedad de Hecho";
+                   break;
+                case "3":
+                   tipoPersona+="Persona Jurídica";
+                   break;
+           }
+           this.company=new Empresa(cuit, razonSocial, fechaInicioActividades, tipoPersona);
+           companyDAO.writeEmpresa(company);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
     }
 
     public FormController getFormcontroller() {
@@ -60,77 +88,5 @@ public class CompanyController {
 
     public void setCompany(Empresa company) {
         this.company = company;
-    }
-
-    public List<Actividad> getActivites() {
-        return activites;
-    }
-
-    public void setActivites(List<Actividad> activites) {
-        this.activites = activites;
-    }
-
-    public Planta getPlant() {
-        return plant;
-    }
-
-    public void setPlant(Planta plant) {
-        this.plant = plant;
-    }
-
-    public Domicilio getAddress() {
-        return address;
-    }
-
-    public void setAddress(Domicilio address) {
-        this.address = address;
-    }
-
-    public PartidaInmobiliaria getPartida() {
-        return partida;
-    }
-
-    public void setPartida(PartidaInmobiliaria partida) {
-        this.partida = partida;
-    }
-
-    public Representante getRepresentanteLegal() {
-        return representanteLegal;
-    }
-
-    public void setRepresentanteLegal(Representante representanteLegal) {
-        this.representanteLegal = representanteLegal;
-    }
-
-    public List<Representante> getRepresentantes() {
-        return representantes;
-    }
-
-    public void setRepresentantes(List<Representante> representantes) {
-        this.representantes = representantes;
-    }
-
-    public List<Representante> getAutoridades() {
-        return autoridades;
-    }
-
-    public void setAutoridades(List<Representante> autoridades) {
-        this.autoridades = autoridades;
-    }
-
-    public FormacionDePersonal getPersonal() {
-        return personal;
-    }
-
-    public void setPersonal(FormacionDePersonal personal) {
-        this.personal = personal;
-    }
-
-    public Perito getPerito() {
-        return perito;
-    }
-
-    public void setPerito(Perito perito) {
-        this.perito = perito;
     }
 }

@@ -3,15 +3,15 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 27-ago-2019 12:41:29 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Modelo.Partidainmobiliaria" table="partidainmobiliaria" catalog="mma_data_sf_bd" optimistic-lock="version">
-        <id name="nroPartida" type="string">
+    <class name="Modelo.PartidaInmobiliaria" table="partidainmobiliaria" catalog="mma_data_sf_bd" optimistic-lock="version">
+        <id name="nroPartida" type="String">
             <column name="nroPartida" length="50" />
             <generator class="assigned" />
         </id>
-        <property name="latitud" type="string">
+        <property name="latitud" type="String">
             <column name="latitud" length="15" not-null="true" />
         </property>
-        <property name="longitud" type="string">
+        <property name="longitud" type="String">
             <column name="longitud" length="15" not-null="true" />
         </property>
     </class>

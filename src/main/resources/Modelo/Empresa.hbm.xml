@@ -8,13 +8,13 @@
             <column name="cuit" />
             <generator class="assigned" />
         </id>
-        <property name="razonSocial" type="string">
+        <property name="razonSocial" type="String">
             <column name="razonSocial" length="50" not-null="true" />
         </property>
         <property name="fechaInicioActividades" type="date">
             <column name="fechaInicioActividades" length="10" not-null="true" />
         </property>
-        <property name="tipoPersona" type="string">
+        <property name="tipoPersona" type="String">
             <column name="tipoPersona" length="50" not-null="true" />
         </property>
         <property name="nroRegistro" type="java.lang.Integer">
@@ -42,7 +42,7 @@
             <key>
                 <column name="cuit" not-null="true" />
             </key>
-            <one-to-many class="Modelo.Actividadempresa" />
+            <one-to-many class="Modelo.ActividadEmpresa" />
         </set>
     </class>
 </hibernate-mapping>

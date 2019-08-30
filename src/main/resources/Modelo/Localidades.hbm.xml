@@ -14,13 +14,13 @@
         <many-to-one name="nodos" class="Modelo.Nodos" fetch="select">
             <column name="id_nodo" not-null="true" />
         </many-to-one>
-        <property name="nombreLocalidad" type="string">
+        <property name="nombreLocalidad" type="String">
             <column name="nombre_localidad" length="50" not-null="true" />
         </property>
-        <property name="categoria" type="string">
+        <property name="categoria" type="String">
             <column name="categoria" length="50" not-null="true" />
         </property>
-        <property name="codigoPostal" type="string">
+        <property name="codigoPostal" type="String">
             <column name="codigo_postal" length="8" not-null="true" />
         </property>
         <set name="domicilios" table="domicilio" inverse="true" lazy="true" fetch="select">

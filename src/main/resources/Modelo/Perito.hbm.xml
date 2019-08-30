@@ -8,13 +8,13 @@
             <column name="nroRegistro" />
             <generator class="assigned" />
         </id>
-        <property name="apellido" type="string">
+        <property name="apellido" type="String">
             <column name="apellido" length="50" not-null="true" />
         </property>
-        <property name="nombre" type="string">
+        <property name="nombre" type="String">
             <column name="nombre" length="50" not-null="true" />
         </property>
-        <property name="profesion" type="string">
+        <property name="profesion" type="String">
             <column name="profesion" length="50" not-null="true" />
         </property>
     </class>

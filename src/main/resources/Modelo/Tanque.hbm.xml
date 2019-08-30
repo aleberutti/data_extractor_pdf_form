@@ -14,7 +14,7 @@
         <property name="capacidadTotal" type="double">
             <column name="capacidadTotal" precision="22" scale="0" not-null="true" />
         </property>
-        <property name="unidad" type="string">
+        <property name="unidad" type="String">
             <column name="unidad" length="2" not-null="true" />
         </property>
         <property name="idPlanta" type="int">

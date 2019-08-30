@@ -11,28 +11,28 @@
         <many-to-one name="planta" class="Modelo.Planta" fetch="select">
             <column name="idPlanta" not-null="true" />
         </many-to-one>
-        <property name="procesoGenerador" type="string">
+        <property name="procesoGenerador" type="String">
             <column name="procesoGenerador" length="50" not-null="true" />
         </property>
-        <property name="componentesRelevantes" type="string">
+        <property name="componentesRelevantes" type="String">
             <column name="componentesRelevantes" length="100" not-null="true" />
         </property>
         <property name="volumen" type="double">
             <column name="volumen" precision="22" scale="0" not-null="true" />
         </property>
-        <property name="unidad" type="string">
+        <property name="unidad" type="String">
             <column name="unidad" length="5" not-null="true" />
         </property>
-        <property name="unidadDeTiempo" type="string">
+        <property name="unidadDeTiempo" type="String">
             <column name="unidadDeTiempo" length="10" not-null="true" />
         </property>
-        <property name="gestion" type="string">
+        <property name="gestion" type="String">
             <column name="gestion" length="200" not-null="true" />
         </property>
-        <property name="cuerpoReceptor" type="string">
+        <property name="cuerpoReceptor" type="String">
             <column name="cuerpoReceptor" length="200" not-null="true" />
         </property>
-        <property name="tipo" type="string">
+        <property name="tipo" type="String">
             <column name="tipo" length="50" not-null="true" />
         </property>
     </class>

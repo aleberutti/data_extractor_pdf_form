@@ -11,19 +11,19 @@
         <many-to-one name="planta" class="Modelo.Planta" fetch="select">
             <column name="idPlanta" not-null="true" />
         </many-to-one>
-        <property name="nombre" type="string">
+        <property name="nombre" type="String">
             <column name="nombre" length="50" not-null="true" />
         </property>
-        <property name="estadoFisico" type="string">
+        <property name="estadoFisico" type="String">
             <column name="estadoFisico" length="20" not-null="true" />
         </property>
         <property name="produccionAnual" type="double">
             <column name="produccionAnual" precision="22" scale="0" not-null="true" />
         </property>
-        <property name="unidad" type="string">
+        <property name="unidad" type="String">
             <column name="unidad" length="10" not-null="true" />
         </property>
-        <property name="almacenamiento" type="string">
+        <property name="almacenamiento" type="String">
             <column name="almacenamiento" length="100" not-null="true" />
         </property>
     </class>

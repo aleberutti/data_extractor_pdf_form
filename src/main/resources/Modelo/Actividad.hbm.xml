@@ -11,7 +11,7 @@
         <many-to-one name="grupoactividad" class="Modelo.Grupoactividad" fetch="select">
             <column name="grupo" length="1" not-null="true" />
         </many-to-one>
-        <property name="nombreActividad" type="string">
+        <property name="nombreActividad" type="String">
             <column name="nombreActividad" length="100" not-null="true" />
         </property>
         <property name="estandar" type="int">
@@ -21,7 +21,7 @@
             <key>
                 <column name="cuacm" not-null="true" />
             </key>
-            <one-to-many class="Modelo.Actividadempresa" />
+            <one-to-many class="Modelo.ActividadEmpresa" />
         </set>
     </class>
 </hibernate-mapping>

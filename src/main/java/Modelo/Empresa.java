@@ -2,7 +2,7 @@ package Modelo;
 // Generated 27-ago-2019 12:41:28 by Hibernate Tools 4.3.1
 
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 

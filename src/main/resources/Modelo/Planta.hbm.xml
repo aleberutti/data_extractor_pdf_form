@@ -48,13 +48,13 @@
             <key>
                 <column name="idPlanta" not-null="true" />
             </key>
-            <one-to-many class="Modelo.Residuossolidos" />
+            <one-to-many class="Modelo.ResiduosSolidos" />
         </set>
         <set name="formaciondepersonals" table="formaciondepersonal" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="idPlanta" not-null="true" />
             </key>
-            <one-to-many class="Modelo.Formaciondepersonal" />
+            <one-to-many class="Modelo.FormacionDePersonal" />
         </set>
         <set name="subproductos" table="subproducto" inverse="true" lazy="true" fetch="select">
             <key>
@@ -66,7 +66,7 @@
             <key>
                 <column name="idPlanta" not-null="true" />
             </key>
-            <one-to-many class="Modelo.Emisiongaseosa" />
+            <one-to-many class="Modelo.EmisionGaseosa" />
         </set>
         <set name="productos" table="producto" inverse="true" lazy="true" fetch="select">
             <key>
@@ -84,13 +84,13 @@
             <key>
                 <column name="idPlanta" not-null="true" />
             </key>
-            <one-to-many class="Modelo.Materiaprima" />
+            <one-to-many class="Modelo.MateriaPrima" />
         </set>
         <set name="riesgopresuntos" table="riesgopresunto" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="idPlanta" not-null="true" />
             </key>
-            <one-to-many class="Modelo.Riesgopresunto" />
+            <one-to-many class="Modelo.RiesgoPresunto" />
         </set>
     </class>
 </hibernate-mapping>

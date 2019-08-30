@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 27-ago-2019 12:41:29 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Modelo.Formaciondepersonal" table="formaciondepersonal" catalog="mma_data_sf_bd" optimistic-lock="version">
+    <class name="Modelo.FormacionDePersonal" table="formaciondepersonal" catalog="mma_data_sf_bd" optimistic-lock="version">
         <id name="idFormacionPersonal" type="java.lang.Integer">
             <column name="idFormacionPersonal" />
             <generator class="identity" />

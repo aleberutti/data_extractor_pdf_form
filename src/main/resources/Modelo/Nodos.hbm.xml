@@ -8,7 +8,7 @@
             <column name="id_nodo" />
             <generator class="assigned" />
         </id>
-        <property name="nombreNodo" type="string">
+        <property name="nombreNodo" type="String">
             <column name="nombre_nodo" length="50" not-null="true" />
         </property>
         <set name="localidadeses" table="localidades" inverse="true" lazy="true" fetch="select">

@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 16-ago-2019 12:36:13 by Hibernate Tools 4.3.1 -->
+<!-- Generated 27-ago-2019 12:41:29 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Empresa" table="empresa" catalog="mma_data_sf_bd" optimistic-lock="version">
-        <id name="cuit" type="int">
+        <id name="cuit" type="long">
             <column name="cuit" />
             <generator class="assigned" />
         </id>
-        <property name="razonSocial" type="string">
+        <property name="razonSocial" type="String">
             <column name="razonSocial" length="50" not-null="true" />
         </property>
         <property name="fechaInicioActividades" type="date">
             <column name="fechaInicioActividades" length="10" not-null="true" />
         </property>
-        <property name="tipoPersona" type="int">
-            <column name="tipoPersona" not-null="true" />
+        <property name="tipoPersona" type="String">
+            <column name="tipoPersona" length="50" not-null="true" />
         </property>
         <property name="nroRegistro" type="java.lang.Integer">
             <column name="nroRegistro" />
@@ -42,7 +42,7 @@
             <key>
                 <column name="cuit" not-null="true" />
             </key>
-            <one-to-many class="Modelo.Actividadempresa" />
+            <one-to-many class="Modelo.ActividadEmpresa" />
         </set>
     </class>
 </hibernate-mapping>

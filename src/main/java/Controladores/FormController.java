@@ -6,75 +6,131 @@
 package Controladores;
 
 import Modelo.*;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+//import org.w3c.dom.Document;
+//import org.w3c.dom.Element;
+//import org.w3c.dom.Node;
+//import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import org.jdom2.Attribute;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
+
 
 /**
  *
  * @author Admin
  */
+//Singleton Class // Solo se creará una sola instancia que manejará distintos archivos xml mediante el cambio del path
 public class FormController {
+    //Singleton
+    
+    private static FormController instance;
     
     //Unused//public HashMap<String, Nodo> form;
     public FileController filecontroller;
     public Document doc;
+    public String path;
     
-    //Public constructor
-    public FormController(String path) throws Exception{
-        //Unused//this.form= new HashMap();
-        this.filecontroller = new FileController(path);
+    //Public empty constructor
+    private FormController() {
+    }
+    //getInstance del patrón singleton
+    public static synchronized FormController getInstance(){
+    if(instance==null){
+        instance = new FormController();
+    }
+    return instance;
+    }
+    //Se carga el archivo xml y se obtiene el documento raíz
+    public void loadXML()throws Exception{
+        this.filecontroller = new FileController(this.path);
         filecontroller.cargar();
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        this.doc=dBuilder.parse(filecontroller.getArchivo());
+        SAXBuilder saxBuilder = new SAXBuilder();
+        this.doc=saxBuilder.build(filecontroller.getArchivo());
     }
     
+
+    
     //Método que realiza un call del método recursivo y devuelve el valor modificado
-    public String getSimpleDataForm(String xpath){
-        doc.getDocumentElement().normalize();
+    public String getSimpleDataForm(String xpath) throws EmptyException {
         
         StringBuilder value= new StringBuilder();     
         
         //Call al método recursivo con la raíz del xml tree y el camino a seguir hacia el nodo deseado
-        this.SimpleNodeSearcher(doc.getDocumentElement(), xpath, value);
+        this.SimpleNodeSearcher(doc.getRootElement(), xpath, value);
         
         return value.toString();
     }
+    //Método que realiza un call del método recursivo y devuelve una lista con los valores, se utiliza para campos dinámicos como las actividades
+    public ArrayList <Element> getComplexDataForm(String xpath){
+        
+        ArrayList <Element> nodes = new ArrayList<>();
+        
+        //Call al método recursivo con la raíz del xml tree y el camino a seguir hacia el nodo deseado
+        this.ComplexNodeSearcher(doc.getRootElement(), xpath, nodes);
+        
+        return nodes;
+    }
     
     //Método recursivo para la obtención de un dato mediante su camino al nodo en el archivo xml
-    public void SimpleNodeSearcher(Node nNode, String xpath, StringBuilder value){
+    public static void SimpleNodeSearcher (Element element, String xpath, StringBuilder value) throws EmptyException {
         StringTokenizer st= new StringTokenizer(xpath, ".");
-        
+        //System.out.println(xpath);
         while(st.hasMoreTokens()){
             //Caso base del método recursivo
             if(st.countTokens()==1){
                 String nodeName= st.nextToken();
-                if(nNode.getNodeType() == Node.ELEMENT_NODE){
-                    Element e = (Element) nNode;
-                    //Modificamos el valor pasado como parámetro
-                    value.append(e.getElementsByTagName(nodeName).item(0).getTextContent());
-                    break;
+                String textContent = element.getChild(nodeName).getText();
+                
+                if(textContent.equals("")){
+                    throw new EmptyException("The next node is empty: " + nodeName);
                 }
+                else{
+                    //Modificamos el valor pasado como parámetro
+                    value.append(textContent);
+                }
+                break;
             }
             else{
                 //Recursividad
                 String nodeName= st.nextToken();
-                if(nNode.getNodeType() == Node.ELEMENT_NODE){
-                    Element e = (Element) nNode;
-                    SimpleNodeSearcher(e.getElementsByTagName(nodeName).item(0),st.nextToken("\n"), value);
-                }
+                SimpleNodeSearcher(element.getChild(nodeName),st.nextToken("\n"), value);
+                
             }
         }
+    }
+    public static void ComplexNodeSearcher (Element element, String xpath, ArrayList<Element> value){
+        StringTokenizer st= new StringTokenizer(xpath, ".");
+        //System.out.println(xpath);
+        while(st.hasMoreTokens()){
+            //Caso base del método recursivo
+            if(st.countTokens()==1){
+                String nodeName= st.nextToken();
+                //System.out.println(nodeName);
+                List<Element> nList = element.getChildren(nodeName);
+                //System.out.println(nList.getLength());
+                if (nList.size()>=1){
+                    //Modificamos el valor pasado como parámetro
+                    value.addAll(nList);
+                }
+                break;
+                
+            }
+            else{
+                //Recursividad
+                String nodeName= st.nextToken();
+                ComplexNodeSearcher(element.getChild(nodeName),st.nextToken("\n"), value);
+                
+            }
+        }
+    }
+    public void setPath(String path){
+        this.path=path;    
     }
     
     

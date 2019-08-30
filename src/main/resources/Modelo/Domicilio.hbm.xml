@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 16-ago-2019 12:36:13 by Hibernate Tools 4.3.1 -->
+<!-- Generated 27-ago-2019 12:41:29 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Domicilio" table="domicilio" catalog="mma_data_sf_bd" optimistic-lock="version">
         <composite-id name="id" class="Modelo.DomicilioId">
-            <key-property name="tipo" type="string">
+            <key-property name="tipo" type="String">
                 <column name="tipo" length="20" />
             </key-property>
-            <key-property name="calle" type="string">
+            <key-property name="calle" type="String">
                 <column name="calle" length="50" />
             </key-property>
-            <key-property name="numero" type="string">
+            <key-property name="numero" type="String">
                 <column name="numero" length="6" />
             </key-property>
         </composite-id>
@@ -27,19 +27,19 @@
         <property name="piso" type="java.lang.Integer">
             <column name="piso" />
         </property>
-        <property name="depto" type="string">
+        <property name="depto" type="String">
             <column name="depto" length="6" />
         </property>
         <property name="telefono" type="int">
             <column name="telefono" not-null="true" />
         </property>
-        <property name="email" type="string">
+        <property name="email" type="String">
             <column name="email" length="50" not-null="true" />
         </property>
-        <property name="zonificacion" type="string">
+        <property name="zonificacion" type="String">
             <column name="zonificacion" length="50" not-null="true" />
         </property>
-        <property name="nroPartida" type="string">
+        <property name="nroPartida" type="String">
             <column name="nroPartida" length="50" />
         </property>
     </class>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 16-ago-2019 12:36:13 by Hibernate Tools 4.3.1 -->
+<!-- Generated 27-ago-2019 12:41:29 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Representante" table="representante" catalog="mma_data_sf_bd" optimistic-lock="version">
         <id name="documento" type="int">
@@ -11,16 +11,16 @@
         <many-to-one name="empresa" class="Modelo.Empresa" fetch="select">
             <column name="cuit" not-null="true" />
         </many-to-one>
-        <property name="apellido" type="string">
+        <property name="apellido" type="String">
             <column name="apellido" length="50" not-null="true" />
         </property>
-        <property name="nombre" type="string">
+        <property name="nombre" type="String">
             <column name="nombre" length="50" not-null="true" />
         </property>
-        <property name="cargo" type="string">
+        <property name="cargo" type="String">
             <column name="cargo" length="50" not-null="true" />
         </property>
-        <property name="tipo" type="string">
+        <property name="tipo" type="String">
             <column name="tipo" length="20" not-null="true" />
         </property>
     </class>

@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 16-ago-2019 12:36:13 by Hibernate Tools 4.3.1 -->
+<!-- Generated 27-ago-2019 12:41:29 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Modelo.Actividadempresa" table="actividadempresa" catalog="mma_data_sf_bd" optimistic-lock="version">
-        <composite-id name="id" class="Modelo.ActividadempresaId">
-            <key-property name="cuit" type="int">
+    <class name="Modelo.ActividadEmpresa" table="actividadempresa" catalog="mma_data_sf_bd" optimistic-lock="version">
+        <composite-id name="id" class="Modelo.ActividadEmpresaId">
+            <key-property name="cuit" type="long">
                 <column name="cuit" />
             </key-property>
             <key-property name="cuacm" type="int">
@@ -18,7 +18,7 @@
         <many-to-one name="empresa" class="Modelo.Empresa" update="false" insert="false" fetch="select">
             <column name="cuit" not-null="true" />
         </many-to-one>
-        <property name="prioridad" type="string">
+        <property name="prioridad" type="String">
             <column name="prioridad" length="20" not-null="true" />
         </property>
     </class>

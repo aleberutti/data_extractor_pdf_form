@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 16-ago-2019 12:36:13 by Hibernate Tools 4.3.1 -->
+<!-- Generated 27-ago-2019 12:41:29 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Localidades" table="localidades" catalog="mma_data_sf_bd" optimistic-lock="version">
         <id name="id" type="int">
@@ -14,13 +14,13 @@
         <many-to-one name="nodos" class="Modelo.Nodos" fetch="select">
             <column name="id_nodo" not-null="true" />
         </many-to-one>
-        <property name="nombreLocalidad" type="string">
+        <property name="nombreLocalidad" type="String">
             <column name="nombre_localidad" length="50" not-null="true" />
         </property>
-        <property name="categoria" type="string">
+        <property name="categoria" type="String">
             <column name="categoria" length="50" not-null="true" />
         </property>
-        <property name="codigoPostal" type="string">
+        <property name="codigoPostal" type="String">
             <column name="codigo_postal" length="8" not-null="true" />
         </property>
         <set name="domicilios" table="domicilio" inverse="true" lazy="true" fetch="select">

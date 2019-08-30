@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 16-ago-2019 12:36:13 by Hibernate Tools 4.3.1 -->
+<!-- Generated 27-ago-2019 12:41:29 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Modelo.Grupoactividad" table="grupoactividad" catalog="mma_data_sf_bd" optimistic-lock="version">
+    <class name="Modelo.GrupoActividad" table="grupoactividad" catalog="mma_data_sf_bd" optimistic-lock="version">
         <id name="idGrupo" type="char">
             <column name="idGrupo" length="1" />
             <generator class="assigned" />
         </id>
-        <property name="nombreGrupo" type="string">
+        <property name="nombreGrupo" type="String">
             <column name="nombreGrupo" length="100" not-null="true" />
         </property>
         <set name="actividads" table="actividad" inverse="true" lazy="true" fetch="select">

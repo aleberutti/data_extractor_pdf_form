@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 16-ago-2019 12:36:13 by Hibernate Tools 4.3.1 -->
+<!-- Generated 27-ago-2019 12:41:29 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Insumo" table="insumo" catalog="mma_data_sf_bd" optimistic-lock="version">
         <id name="idInsumo" type="java.lang.Integer">
@@ -11,19 +11,19 @@
         <many-to-one name="planta" class="Modelo.Planta" fetch="select">
             <column name="idPlanta" not-null="true" />
         </many-to-one>
-        <property name="nombre" type="string">
+        <property name="nombre" type="String">
             <column name="nombre" length="50" not-null="true" />
         </property>
-        <property name="estadoFisico" type="string">
+        <property name="estadoFisico" type="String">
             <column name="estadoFisico" length="20" not-null="true" />
         </property>
         <property name="consumoAnual" type="double">
             <column name="consumoAnual" precision="22" scale="0" not-null="true" />
         </property>
-        <property name="unidad" type="string">
+        <property name="unidad" type="String">
             <column name="unidad" length="10" not-null="true" />
         </property>
-        <property name="almacenamiento" type="string">
+        <property name="almacenamiento" type="String">
             <column name="almacenamiento" length="100" not-null="true" />
         </property>
     </class>

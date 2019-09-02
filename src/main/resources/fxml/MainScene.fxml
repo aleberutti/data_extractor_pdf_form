@@ -20,9 +20,9 @@
          <children>
             <ImageView id="imgSantaFe" fx:id="imgSantaFe" fitHeight="320.0" fitWidth="417.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Imgs%20e%20iconos/Capa_2.png" />
+                  <Image url="@../../../../Images/Capa_2.png" />
                </image></ImageView>
-            <Button id="buttonCargar" fx:id="buttonCargar" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="72.0" prefWidth="361.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Cargar" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
+            <Button id="buttonCargar" fx:id="buttonCargar" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#buttonCargar" prefHeight="72.0" prefWidth="361.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Cargar" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
                <graphic>
                   <ImageView id="imgButtonCargar" fx:id="imgButtonCargar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -65,16 +65,16 @@
             <ListView fx:id="listViewArchivos" prefHeight="507.0" prefWidth="672.0" style="-fx-background-color: #333333; visibility: true; -fx-border-color: #B3B3B3;" />
          </children>
       </VBox>
-      <Button id="btnCerrar" fx:id="btnCerrar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="973.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: 202020;" textAlignment="CENTER" AnchorPane.bottomAnchor="605.0" AnchorPane.leftAnchor="973.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <Button id="btnCerrar" fx:id="btnCerrar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="973.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnCerrar" style="-fx-background-color: 202020;" textAlignment="CENTER" AnchorPane.bottomAnchor="605.0" AnchorPane.leftAnchor="973.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
          <graphic>
             <ImageView id="imgBtnCerrar" fx:id="imgBtnCerrar" fitHeight="21.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Imgs%20e%20iconos/cerrar.png" />
+                  <Image url="@../../../../Images/cerrar.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button id="btnMinimizar" fx:id="btnMinimizar" contentDisplay="BOTTOM" layoutX="927.0" layoutY="17.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="46.0" style="-fx-background-color: 202020;" AnchorPane.bottomAnchor="598.0" AnchorPane.leftAnchor="927.0" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="17.0">
+      <Button id="btnMinimizar" fx:id="btnMinimizar" contentDisplay="BOTTOM" layoutX="927.0" layoutY="17.0" mnemonicParsing="false" onAction="#btnMinimizar" prefHeight="19.0" prefWidth="46.0" style="-fx-background-color: 202020;" AnchorPane.bottomAnchor="598.0" AnchorPane.leftAnchor="927.0" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="17.0">
          <graphic>
             <ImageView id="imgBtnMinimizar" fx:id="imgBtnMinimizar" fitHeight="5.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>

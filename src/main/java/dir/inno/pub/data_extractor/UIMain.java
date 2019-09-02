@@ -23,6 +23,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -37,7 +38,7 @@ public class UIMain extends Application {
      * https://www.callicoder.com/javafx-fxml-form-gui-tutorial/
      */
     private Stage stagePrimario;
-    private BorderPane rootLayout;
+    public BorderPane rootLayout;
     private ObservableList<String> listaArchivos = FXCollections.observableArrayList(); 
     
     
@@ -47,10 +48,10 @@ public class UIMain extends Application {
     public void start(Stage primaryStage) throws Exception {
         
         this.stagePrimario = primaryStage;
-        this.stagePrimario.setTitle("Título Random");
-        initRootLayout();
-        showLogin();
-        //showMainScene();   
+        this.stagePrimario.initStyle(StageStyle.UNDECORATED);
+        //this.stagePrimario.setTitle("Título Random");
+        //showLogin();
+        showMainScene();   
     }
     
     /**
@@ -78,6 +79,7 @@ public class UIMain extends Application {
      */
     public void showMainScene(){
         try{
+            initRootLayout();
             //cargo el mainscene desde el archivo fxml
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(new URL("file:///D:/Netbeans/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/MainScene.fxml"));
@@ -96,6 +98,7 @@ public class UIMain extends Application {
      */
     public void showLogin(){
         try{
+            initRootLayout();
             //cargo el login desde el archivo fxml
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(new URL("file:///D:/Netbeans/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/Login.fxml"));

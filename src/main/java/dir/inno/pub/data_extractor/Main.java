@@ -23,7 +23,7 @@ public class Main {
  
       try {
             FormController formController = FormController.getInstance();
-            formController.setPath("C:\\Users\\Admin\\Desktop\\Formulario de presentación v4.18 prueba 3 cerra3_datos.xml");
+            formController.setPath("D:\\Netbeans\\Proyectos\\Formulario de presentación v4.18 prueba 3 cerra3_datos.xml");
             formController.loadXML();
             CompanyController cc = new CompanyController();
             cc.instantiate();

@@ -27,8 +27,8 @@
                   <Image url="@../../../../Images/path4.png" />
                </image>
             </ImageView>
-            <TextField id="textFieldUsername" fx:id="textFieldUsername" layoutX="222.0" layoutY="159.0" prefHeight="37.0" prefWidth="238.0" promptText="Usuario" style="-fx-background-color: #4A4A49;" />
-            <PasswordField id="passwordFieldLogin" fx:id="passwordFieldLogin" layoutX="222.0" layoutY="210.0" prefHeight="37.0" prefWidth="238.0" promptText="Contraseña" style="-fx-background-color: #4A4A49; -fx-border-color: #202020;">
+            <TextField id="textFieldUsername" fx:id="textFieldUsername" layoutX="222.0" layoutY="159.0" prefHeight="37.0" prefWidth="238.0" promptText="Usuario" style="-fx-background-color: #4A4A49;-fx-text-inner-color: #B3B3B3;" />
+            <PasswordField id="passwordFieldLogin" fx:id="passwordFieldLogin" layoutX="222.0" layoutY="210.0" prefHeight="37.0" prefWidth="238.0" promptText="Contraseña" style="-fx-background-color: #4A4A49; -fx-border-color: #202020;-fx-text-inner-color: #B3B3B3;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></PasswordField>

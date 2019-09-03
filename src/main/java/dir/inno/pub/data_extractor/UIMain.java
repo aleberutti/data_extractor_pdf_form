@@ -40,7 +40,8 @@ public class UIMain extends Application {
     private Stage stagePrimario;
     public BorderPane rootLayout;
     private ObservableList<String> listaArchivos = FXCollections.observableArrayList(); 
-    
+    private double xoffset;
+    private double yoffset;
     
     
     
@@ -49,9 +50,7 @@ public class UIMain extends Application {
         
         this.stagePrimario = primaryStage;
         this.stagePrimario.initStyle(StageStyle.UNDECORATED);
-        //this.stagePrimario.setTitle("Título Random");
-        //showLogin();
-        showMainScene();   
+        showLogin(); 
     }
     
     /**
@@ -63,6 +62,16 @@ public class UIMain extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(new URL("file:///D:/Netbeans/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
+            
+            rootLayout.setOnMousePressed(event->{
+                xoffset = event.getSceneX();
+                yoffset = event.getSceneY();
+            });
+            
+            rootLayout.setOnMouseDragged(e->{
+                stagePrimario.setX(e.getScreenX() - xoffset);
+                stagePrimario.setY(e.getScreenY() - yoffset);
+            });
             
             //muestro el contenido dentro del layout raiz
             Scene scene = new Scene(rootLayout);

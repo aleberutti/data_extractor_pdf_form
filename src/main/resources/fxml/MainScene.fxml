@@ -49,7 +49,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="buttonCerrarSesion" fx:id="buttonCerrarSesion" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="72.0" prefWidth="402.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Cerrar sesión" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
+            <Button id="buttonCerrarSesion" fx:id="buttonCerrarSesion" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#buttonCerrarSesion" prefHeight="72.0" prefWidth="402.0" style="-fx-background-color: #4a4a49; -fx-border-color: #bababa; -fx-border-radius: 25;" text="Cerrar sesión" textAlignment="CENTER" textFill="#bbbbbb" wrapText="true">
                <graphic>
                   <ImageView id="imgButtonCerrarSesion" fx:id="imgButtonCerrarSesion" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -78,7 +78,7 @@
          <graphic>
             <ImageView id="imgBtnMinimizar" fx:id="imgBtnMinimizar" fitHeight="5.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Imgs%20e%20iconos/minimize.png" />
+                  <Image url="@../../../../Images/minimize.png" />
                </image>
             </ImageView>
          </graphic>

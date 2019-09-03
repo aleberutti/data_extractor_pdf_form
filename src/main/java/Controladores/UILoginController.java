@@ -4,16 +4,25 @@
 
 package Controladores;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class UILoginController {
 
@@ -93,23 +102,49 @@ public class UILoginController {
     }
     
     @FXML
-    public void btnInicioSesionAction(ActionEvent event){
+    public void btnInicioSesionAction(ActionEvent event) throws MalformedURLException, IOException{
         String user = textFieldUsername.getText();
         String pswd = passwordFieldLogin.getText();
         
        if((user.isEmpty() || pswd.isEmpty()) || (user.length() != 8 || pswd.length() != 8 )){
            //Notifications.create().title("Error").text("Network is unreachable").showError();
+           display("","Debe completar correctamente los campos de usuario y contraseña para iniciar sesión.");
            System.out.println("Debe completar correctamente los campos de usuario y contraseña para iniciar sesión.");
        }
        else{
            if(user.length() == 8 && pswd.length() == 8){
                System.out.println("Campos correctos. Sesión iniciada.");
-           }
-               
-       }
-       
-       
-        
-        
+               Scene scene;
+               FXMLLoader loader = new FXMLLoader();
+               loader.setLocation(new URL("file:///D:/Netbeans/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/MainScene.fxml"));
+               AnchorPane rootAnchorPane = (AnchorPane) loader.load();
+               scene = new Scene(rootAnchorPane);
+               ((Stage) (((Button)event.getSource()).getScene().getWindow())).setScene(scene);
+           }     
+       }    
     }
+    
+    public static void display(String title, String message) {
+        Stage window = new Stage();
+
+        //Block events to other windows
+        window.initModality(Modality.APPLICATION_MODAL);
+        //window.initStyle(StageStyle.UNDECORATED);
+        window.setTitle(title);
+        window.setMinWidth(250);
+
+        Label label = new Label();
+        label.setText(message);
+        Button closeButton = new Button("Cerrar");
+        closeButton.setOnAction(e -> window.close());
+
+        VBox layout = new VBox(10);
+        layout.getChildren().addAll(label, closeButton);
+        layout.setAlignment(Pos.CENTER);
+
+        //Display window and wait for it to be closed before returning
+        Scene scene = new Scene(layout);
+        window.setScene(scene);
+        window.showAndWait();
     }
+}

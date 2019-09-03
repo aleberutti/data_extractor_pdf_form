@@ -7,13 +7,19 @@ package Controladores;
 
 
 import dir.inno.pub.data_extractor.UIMain;
+import java.awt.Point;
 import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -22,6 +28,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -94,8 +101,10 @@ public class UIMainSceneController{
     @FXML // fx:id="imgButtonCerrarSesion"
     private ImageView imgButtonCerrarSesion; // Value injected by FXMLLoader
     
+    private Point mouseDownCompCoords = null;
     private UIMain ui;
     private ObservableList<String> listaArchivos = FXCollections.observableArrayList(); 
+    
     
     /**
      * Constructor. Debe ser llamado antes del método initialize
@@ -129,20 +138,14 @@ public class UIMainSceneController{
         assert buttonCargar != null : "fx:id=\"buttonCargar\" was not injected: check your FXML file 'MainScene.fxml'.";
         assert imgButtonEliminar != null : "fx:id=\"imgButtonEliminar\" was not injected: check your FXML file 'MainScene.fxml'.";
         assert imgButtonCerrarSesion != null : "fx:id=\"imgButtonCerrarSesion\" was not injected: check your FXML file 'MainScene.fxml'.";
-        
-        
-        
-        //System.out.println(listaArchivos.toString());
-        
+      
     }
-    
     
     @FXML
     public void buttonDelete(){
         String item;
         item = this.listViewArchivos.getSelectionModel().getSelectedItem();
-        this.listViewArchivos.getItems().remove(item);
-        
+        this.listViewArchivos.getItems().remove(item);  
     }
     
     @FXML
@@ -172,5 +175,38 @@ public class UIMainSceneController{
  
         }
     }
+    
+    @FXML
+    public void buttonCerrarSesion(ActionEvent event) throws MalformedURLException, IOException{
+       Scene scene;
+       FXMLLoader loader = new FXMLLoader();
+       loader.setLocation(new URL("file:///D:/Netbeans/Proyectos/data_extractor_pdf_form/src/main/resources/fxml/Login.fxml"));
+       AnchorPane anchorPaneLoginRoot = (AnchorPane) loader.load();
+       scene = new Scene(anchorPaneLoginRoot);
+       ((Stage) (((Button)event.getSource()).getScene().getWindow())).setScene(scene);
+    }
+    
+    public static void display(String title, String message) {
+        Stage window = new Stage();
 
+        //Block events to other windows
+        window.initModality(Modality.APPLICATION_MODAL);
+        //window.initStyle(StageStyle.UNDECORATED);
+        window.setTitle(title);
+        window.setMinWidth(250);
+
+        Label label = new Label();
+        label.setText(message);
+        Button closeButton = new Button("Cerrar");
+        closeButton.setOnAction(e -> window.close());
+
+        VBox layout = new VBox(10);
+        layout.getChildren().addAll(label, closeButton);
+        layout.setAlignment(Pos.CENTER);
+
+        //Display window and wait for it to be closed before returning
+        Scene scene = new Scene(layout);
+        window.setScene(scene);
+        window.showAndWait();
+    }
 }

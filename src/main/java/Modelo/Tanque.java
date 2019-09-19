@@ -60,10 +60,6 @@ public class Tanque  implements java.io.Serializable {
     public void setIdPlanta(int idPlanta) {
         this.idPlanta = idPlanta;
     }
-
-
-
-
 }
 
 

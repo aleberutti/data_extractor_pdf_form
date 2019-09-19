@@ -70,10 +70,6 @@ public class Actividad  implements java.io.Serializable {
     public void setActividadempresas(Set actividadempresas) {
         this.actividadempresas = actividadempresas;
     }
-
-
-
-
 }
 
 

@@ -87,10 +87,6 @@ public class FormacionDePersonal  implements java.io.Serializable {
     public void setCapacitacionProfesionales(boolean capacitacionProfesionales) {
         this.capacitacionProfesionales = capacitacionProfesionales;
     }
-
-
-
-
 }
 
 

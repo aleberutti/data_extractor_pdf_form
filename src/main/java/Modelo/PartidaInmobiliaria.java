@@ -43,10 +43,6 @@ public class PartidaInmobiliaria  implements java.io.Serializable {
     public void setLongitud(String longitud) {
         this.longitud = longitud;
     }
-
-
-
-
 }
 
 

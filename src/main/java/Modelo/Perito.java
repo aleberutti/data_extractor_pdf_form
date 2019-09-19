@@ -52,10 +52,6 @@ public class Perito  implements java.io.Serializable {
     public void setProfesion(String profesion) {
         this.profesion = profesion;
     }
-
-
-
-
 }
 
 

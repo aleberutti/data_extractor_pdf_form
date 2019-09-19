@@ -50,10 +50,6 @@ public class GrupoActividad  implements java.io.Serializable {
     public void setActividads(Set actividads) {
         this.actividads = actividads;
     }
-
-
-
-
 }
 
 

@@ -105,10 +105,6 @@ public class Efluente  implements java.io.Serializable {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
-
-
-
 }
 
 

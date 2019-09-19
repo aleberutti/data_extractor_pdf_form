@@ -9,6 +9,7 @@ package Controladores;
  *
  * @author Admin
  */
+//Clase para manejar excepciones en caso de que el campo esté vacío
 public class EmptyException extends Exception {
     public EmptyException (String message){
         super(message);

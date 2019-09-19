@@ -78,10 +78,6 @@ public class Subproducto  implements java.io.Serializable {
     public void setAlmacenamiento(String almacenamiento) {
         this.almacenamiento = almacenamiento;
     }
-
-
-
-
 }
 
 

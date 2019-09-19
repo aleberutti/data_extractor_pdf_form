@@ -52,10 +52,6 @@ public class ActividadEmpresa  implements java.io.Serializable {
     public void setPrioridad(String prioridad) {
         this.prioridad = prioridad;
     }
-
-
-
-
 }
 
 

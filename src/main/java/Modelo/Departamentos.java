@@ -50,10 +50,6 @@ public class Departamentos  implements java.io.Serializable {
     public void setLocalidadeses(Set localidadeses) {
         this.localidadeses = localidadeses;
     }
-
-
-
-
 }
 
 

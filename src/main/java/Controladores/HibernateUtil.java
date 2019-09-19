@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
 
+
 /**
  * Hibernate Utility class with a convenient method to get Session Factory
  * object.
@@ -20,7 +21,6 @@ import org.hibernate.SessionFactory;
 public class HibernateUtil {
 
     private static final SessionFactory sessionFactory;
-    
     static {
         try {
             // Create the SessionFactory from standard (hibernate.cfg.xml) 
@@ -37,12 +37,12 @@ public class HibernateUtil {
     
     public static SessionFactory getSessionFactory() {
         //Se verifica conexión
-        try{
-            DriverManager.getConnection("jdbc:mysql://localhost:3306/mma_data_sf_bd?zeroDateTimeBehavior=convertToNull", "root", "admin");
-        } catch (SQLException e){
-            JOptionPane.showMessageDialog(null, "ERROR. Falló la conexión a la base de datos", "Error",  JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
-        }
+//        try{
+//            DriverManager.getConnection("jdbc:mysql://localhost:3306/mma_data_sf_bd?zeroDateTimeBehavior=convertToNull", "root", "");
+//        } catch (SQLException e){
+//            JOptionPane.showMessageDialog(null, "ERROR. Falló la conexión a la base de datos", "Error",  JOptionPane.ERROR_MESSAGE);
+//            System.exit(0);
+//        }
         return sessionFactory;
     }
 }

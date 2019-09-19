@@ -6,13 +6,13 @@
 package Controladores;
 
 import org.hibernate.Session;
-import org.hibernate.Query;
-import org.hibernate.Session;
 import Modelo.Empresa;
 /**
  *
  * @author Admin
  */
+
+//Clase que se encarga de la persistencia
 public class CompanyDAO extends GenericDAO{
     private Session SS;
     

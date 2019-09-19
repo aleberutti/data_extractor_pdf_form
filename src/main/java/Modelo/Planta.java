@@ -199,10 +199,6 @@ public class Planta  implements java.io.Serializable {
     public void setRiesgopresuntos(Set riesgopresuntos) {
         this.riesgopresuntos = riesgopresuntos;
     }
-
-
-
-
 }
 
 

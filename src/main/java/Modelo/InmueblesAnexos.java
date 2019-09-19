@@ -51,10 +51,6 @@ public class InmueblesAnexos  implements java.io.Serializable {
     public void setIdPlanta(int idPlanta) {
         this.idPlanta = idPlanta;
     }
-
-
-
-
 }
 
 

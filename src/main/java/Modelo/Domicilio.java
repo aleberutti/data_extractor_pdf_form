@@ -115,10 +115,6 @@ public class Domicilio  implements java.io.Serializable {
     public void setNroPartida(String nroPartida) {
         this.nroPartida = nroPartida;
     }
-
-
-
-
 }
 
 

@@ -90,10 +90,6 @@ public class Localidades  implements java.io.Serializable {
     public void setDomicilios(Set domicilios) {
         this.domicilios = domicilios;
     }
-
-
-
-
 }
 
 

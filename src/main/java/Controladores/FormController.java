@@ -5,19 +5,11 @@
  */
 package Controladores;
 
-import Modelo.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
-//import org.w3c.dom.Document;
-//import org.w3c.dom.Element;
-//import org.w3c.dom.Node;
-//import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-import org.jdom2.Attribute;
 import org.jdom2.Document;
 import org.jdom2.Element;
-import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
 

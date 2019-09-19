@@ -96,10 +96,6 @@ public class RiesgoPresunto  implements java.io.Serializable {
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
-
-
-
-
 }
 
 

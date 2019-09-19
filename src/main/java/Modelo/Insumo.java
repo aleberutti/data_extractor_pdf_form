@@ -78,10 +78,6 @@ public class Insumo  implements java.io.Serializable {
     public void setAlmacenamiento(String almacenamiento) {
         this.almacenamiento = almacenamiento;
     }
-
-
-
-
 }
 
 

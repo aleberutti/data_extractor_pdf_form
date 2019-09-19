@@ -69,10 +69,6 @@ public class SustanciasAuxYFluidos  implements java.io.Serializable {
     public void setIdPlanta(int idPlanta) {
         this.idPlanta = idPlanta;
     }
-
-
-
-
 }
 
 

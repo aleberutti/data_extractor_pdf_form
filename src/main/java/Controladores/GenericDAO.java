@@ -11,6 +11,7 @@ import org.hibernate.Session;
  *
  * @author Admin
  */
+//Clase de la cual extenderán todos los DAO
 public class GenericDAO {
     private static Session SS;
     

@@ -15,6 +15,7 @@ import java.io.FileWriter;
  *
  * @author ale_b
  */
+//Clase controladora de archivos
 public class FileController {
     public String path;
     public File archivo;

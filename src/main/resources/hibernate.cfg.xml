@@ -46,34 +46,32 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mma_data_sf_bd?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.show_sql">true</property>
-    <property name="connection.pool_size">1</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
-    <property name="hibernate.connection.password">admin</property>
-    <mapping resource="Modelo/Inmueblesanexos.hbm.xml"/>
+    <mapping resource="Modelo/InmueblesAnexos.hbm.xml"/>
     <mapping resource="Modelo/Servicio.hbm.xml"/>
-    <mapping resource="Modelo/Sustanciasauxyfluidos.hbm.xml"/>
+    <mapping resource="Modelo/SustanciasAuxYFluidos.hbm.xml"/>
     <mapping resource="Modelo/Efluente.hbm.xml"/>
-    <mapping resource="Modelo/Sustanciasaux.hbm.xml"/>
+    <mapping resource="Modelo/SustanciasAux.hbm.xml"/>
     <mapping resource="Modelo/Insumo.hbm.xml"/>
     <mapping resource="Modelo/Localidades.hbm.xml"/>
     <mapping resource="Modelo/Tanque.hbm.xml"/>
-    <mapping resource="Modelo/Actividadempresa.hbm.xml"/>
+    <mapping resource="Modelo/ActividadEmpresa.hbm.xml"/>
     <mapping resource="Modelo/Planta.hbm.xml"/>
     <mapping resource="Modelo/Subproducto.hbm.xml"/>
     <mapping resource="Modelo/Domicilio.hbm.xml"/>
-    <mapping resource="Modelo/Partidainmobiliaria.hbm.xml"/>
-    <mapping resource="Modelo/Riesgopresunto.hbm.xml"/>
-    <mapping resource="Modelo/Materiaprima.hbm.xml"/>
+    <mapping resource="Modelo/PartidaInmobiliaria.hbm.xml"/>
+    <mapping resource="Modelo/RiesgoPresunto.hbm.xml"/>
+    <mapping resource="Modelo/MateriaPrima.hbm.xml"/>
     <mapping resource="Modelo/Representante.hbm.xml"/>
     <mapping resource="Modelo/Perito.hbm.xml"/>
     <mapping resource="Modelo/Empresa.hbm.xml"/>
-    <mapping resource="Modelo/Grupoactividad.hbm.xml"/>
+    <mapping resource="Modelo/GrupoActividad.hbm.xml"/>
     <mapping resource="Modelo/Departamentos.hbm.xml"/>
     <mapping resource="Modelo/Producto.hbm.xml"/>
-    <mapping resource="Modelo/Formaciondepersonal.hbm.xml"/>
+    <mapping resource="Modelo/FormacionDePersonal.hbm.xml"/>
     <mapping resource="Modelo/Nodos.hbm.xml"/>
-    <mapping resource="Modelo/Residuossolidos.hbm.xml"/>
-    <mapping resource="Modelo/Emisiongaseosa.hbm.xml"/>
+    <mapping resource="Modelo/ResiduosSolidos.hbm.xml"/>
+    <mapping resource="Modelo/EmisionGaseosa.hbm.xml"/>
     <mapping resource="Modelo/Actividad.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

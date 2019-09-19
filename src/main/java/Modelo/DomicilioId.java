@@ -64,8 +64,6 @@ public class DomicilioId  implements java.io.Serializable {
          result = 37 * result + ( getNumero() == null ? 0 : this.getNumero().hashCode() );
          return result;
    }   
-
-
 }
 
 

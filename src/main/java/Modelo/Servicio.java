@@ -69,10 +69,6 @@ public class Servicio  implements java.io.Serializable {
     public void setIdPlanta(int idPlanta) {
         this.idPlanta = idPlanta;
     }
-
-
-
-
 }
 
 

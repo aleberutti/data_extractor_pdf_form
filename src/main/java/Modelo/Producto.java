@@ -96,10 +96,6 @@ public class Producto  implements java.io.Serializable {
     public void setEspecificacion(String especificacion) {
         this.especificacion = especificacion;
     }
-
-
-
-
 }
 
 

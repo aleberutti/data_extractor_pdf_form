@@ -78,10 +78,6 @@ public class Emisiongaseosa  implements java.io.Serializable {
     public void setComponentesRelevantes(String componentesRelevantes) {
         this.componentesRelevantes = componentesRelevantes;
     }
-
-
-
-
 }
 
 
